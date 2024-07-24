@@ -1,5 +1,6 @@
 <script setup>
-import BottomMenu from './components/BottomMenu.vue';
+
+import BottomMenu from '@/components/BottomMenu.vue'
 </script>
 
 <template>
@@ -7,11 +8,7 @@ import BottomMenu from './components/BottomMenu.vue';
 
   </header>
 
-  <main>
-
-  </main>
-
   <footer>
-    <BottomMenu />
+  <BottomMenu />
   </footer>
 </template>

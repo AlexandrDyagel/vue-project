@@ -8,6 +8,10 @@ import BottomMenu from '@/components/BottomMenu.vue'
 
   </header>
 
+  <main>
+    <router-view></router-view>
+  </main>
+
   <footer>
   <BottomMenu />
   </footer>

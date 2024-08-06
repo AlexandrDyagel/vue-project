@@ -1,3 +1,3 @@
 <template>
-  <h1>Пользователь</h1>
+  <h1 class="font-bold text-3xl">Пользователь</h1>
 </template>

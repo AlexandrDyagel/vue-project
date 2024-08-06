@@ -1,6 +1,10 @@
 <script setup>
 
 import BottomMenu from '@/components/BottomMenu.vue'
+
+const tg = window.Telegram.WebApp;
+tg.expand()
+
 </script>
 
 <template>
@@ -12,7 +16,6 @@ import BottomMenu from '@/components/BottomMenu.vue'
     <router-view></router-view>
   </main>
 
-  <footer>
   <BottomMenu />
-  </footer>
+
 </template>

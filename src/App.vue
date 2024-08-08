@@ -22,7 +22,7 @@ provide('drawerActions', { openDrawer, closeDrawer })
 
 <template>
   <header>
-    <button @click="openDrawer" class="fixed top-0 w-full p-2 z-10"></button>
+
   </header>
     <Drawer v-if="showDrawer"/>
   <main>

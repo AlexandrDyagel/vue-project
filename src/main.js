@@ -2,20 +2,17 @@ import './assets/main.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '@/pages/HomeView.vue'
-import AddChannelView from '@/pages/AddChannelView.vue'
-import HistoryView from '@/pages/HistoryView.vue'
-import UserView from '@/pages/UserView.vue'
 
 const app = createApp(App)
 
 const routes = [
-  { path: '/', component: HomeView },
-  { path: '/add', component: AddChannelView },
-  { path: '/history', component: HistoryView },
-  { path: '/user', component: UserView },
+  { path: '/', name: 'home', component: () => import('@/pages/HomeView.vue') },
+  { path: '/add', name: 'add', component: () => import('@/pages/AddChannelView.vue') },
+  { path: '/history', name: 'history', component: () => import('@/pages/HistoryView.vue') },
+  { path: '/profile', name: 'profile', component: () => import('@/pages/ProfileView.vue') },
 ]
 
 const router = createRouter({
@@ -24,6 +21,6 @@ const router = createRouter({
 })
 
 app.use(router)
-
+app.use(autoAnimatePlugin)
 app.mount('#app')
 

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from 'vue'
+/*import { onMounted } from 'vue'
 import axios from 'axios'
 
 const fetchData = async () => {
@@ -10,9 +10,13 @@ const fetchData = async () => {
   }
 }
 
-onMounted(fetchData)
+onMounted(fetchData)*/
+import { inject } from 'vue'
+
+const { openDrawer } = inject('drawerActions')
 </script>
 
 <template>
   <h1 class="font-bold text-3xl">Биржа</h1>
+  <button @click="openDrawer" class="fixed border border-amber-700 rounded-3xl top-0 right-0 w-1/4 py-4 m-2 z-10">Ткни в меня</button>
 </template>

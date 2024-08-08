@@ -19,4 +19,5 @@ import MenuItem from './BottomMenuItem.vue';
       </li>
     </ul>
   </div>
+
 </template>

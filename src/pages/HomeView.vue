@@ -11,9 +11,6 @@ const fetchData = async () => {
 }
 
 onMounted(fetchData)*/
-import { inject, ref } from 'vue'
-
-const { openDrawer } = inject('drawerActions')
 
 const channels = [
   {
@@ -261,7 +258,7 @@ const channels = [
 </script>
 
 <template>
-  <div class="relative overflow-x-auto shadow-md sm:rounded-lg mb-16">
+  <div class="relative overflow-x-auto overflow-y-auto shadow-md mb-16">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
       <tr>
@@ -282,8 +279,9 @@ const channels = [
         </th>
         <td class="px-6 py-4">
           <!-- Modal toggle -->
-          <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
-             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Посмотреть</a>
+          <button type="button" class="text-[10px] px-2 py-0 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Посмотреть</button>
+<!--          <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
+             class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Посмотреть</a>-->
         </td>
       </tr>
       </tbody>

@@ -6,6 +6,10 @@ import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
 import { createRouter, createWebHistory } from 'vue-router'
 
+// ЧТОБЫ НЕ ПОКАЗЫВАТЬ КОНТЕКСТНОЕ МЕНЮ
+/*document.oncontextmenu = cmenu;
+function cmenu() {return false;}*/
+
 const app = createApp(App)
 
 const routes = [

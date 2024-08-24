@@ -251,7 +251,7 @@ const addedChannels = ref([])
 
 const addChannel = () => {
   let channel = channels.find(c => c.id === idCounter.value)
-  if(channel) {
+  if (channel) {
     addedChannels.value.push(channel)
     idCounter.value++
   } else {
@@ -261,44 +261,39 @@ const addChannel = () => {
 
 </script>
 <template>
-  <div class="mb-16">
-    <div>
-      <h1 class="font-bold text-3xl text-center my-2">Мои каналы</h1>
-    </div>
-
-    <div class="p-4 w-full">
-      <div class="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700">
-
-        <ul v-auto-animate class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <li :key="channel.id" v-for="channel in addedChannels"
-          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 rounded">
-
-            <div
-                class="flex items-center rounded px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
-              <img class="w-10 h-10 rounded-full" :src="channel.img" alt="Jese image">
-              <div class="ps-3">
-                <div class="text-base font-semibold">{{ channel.name }}</div>
-                <div class="font-normal text-gray-500">{{ channel.email }}</div>
-              </div>
-            </div>
-
-          </li>
-        </ul>
-
-        <div @click="addChannel"
-             class="flex items-center mt-2  justify-center h-20 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-          <p class="text-2xl text-gray-400 dark:text-gray-500">
-            <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                 viewBox="0 0 18 18">
-              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M9 1v16M1 9h16" />
-            </svg>
-          </p>
-        </div>
-
-      </div>
-    </div>
+  <div>
+    <h1 class="font-bold text-3xl text-center my-2">Мои каналы</h1>
   </div>
 
+  <div class="p-4 w-full">
+    <div class="p-2 mb-2 border-2 border-dashed rounded-lg border-gray-700">
 
+      <ul v-auto-animate class="w-full text-sm text-left rtl:text-right text-gray-400">
+        <li :key="channel.id" v-for="channel in addedChannels"
+            class="border-b bg-gray-800 border-gray-700 rounded">
+
+          <div
+            class="flex items-center rounded px-6 py-4 whitespace-nowrap text-white">
+            <img class="w-10 h-10 rounded-full" :src="channel.img" alt="Jese image">
+            <div class="ps-3">
+              <div class="text-base font-semibold">{{ channel.name }}</div>
+              <div class="font-normal text-gray-500">{{ channel.email }}</div>
+            </div>
+          </div>
+
+        </li>
+      </ul>
+
+      <div @click="addChannel" class="flex items-center justify-center h-20 rounded bg-gray-800" :class="addedChannels.length > 0 ? `mt-2` : ``">
+        <p class="text-2xl text-gray-500">
+          <svg class="w-3.5 h-3.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+               viewBox="0 0 18 18">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M9 1v16M1 9h16" />
+          </svg>
+        </p>
+      </div>
+
+    </div>
+  </div>
 </template>

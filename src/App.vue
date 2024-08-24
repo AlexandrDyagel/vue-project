@@ -25,10 +25,12 @@ provide('drawerActions', { openDrawer, closeDrawer })
 
   </header>
     <Drawer v-if="showDrawer"/>
-  <main>
+  <main class="mb-20">
     <router-view></router-view>
   </main>
 
-  <BottomMenu />
+  <nav>
+    <BottomMenu />
+  </nav>
 
 </template>

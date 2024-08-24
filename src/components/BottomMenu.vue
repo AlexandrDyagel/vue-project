@@ -51,14 +51,14 @@ watch(route, () => {
 
 <template>
 
-  <div class="fixed bottom-0 w-full">
+  <div class="fixed start-0 bottom-0 w-full z-50 bg-[#17212B]">
     <ul
-      class="text-xs font-medium text-center text-gray-500 shadow flex dark:divide-gray-700 dark:text-gray-400 border border-gray-700">
+      class="text-xs font-medium text-center shadow flex divide-gray-700 text-gray-400 border-t border-gray-700">
       <RouterLink :key="navItem.route" v-for="navItem in navItems"
-                  class="w-full transition duration-500 py-2 border-r border-gray-200 dark:border-gray-700 hover:text-gray-700 hover:bg-gray-50 dark:hover:text-white dark:hover:bg-gray-700"
-                  :class="navItem.active ? `text-gray-700 bg-gray-50 dark:text-white dark:bg-gray-700` : `dark:bg-gray-800`"
+                  class="w-full transition mx-2 duration-500 my-2 rounded-lg active:text-white active:bg-gray-700"
+                  :class="navItem.active ? `text-white bg-gray-700` : `bg-[#17212B]`"
                   :to="navItem.route">
-        <li class="w-full focus-within:z-10 flex flex-col items-center justify-center">
+        <li class="w-full py-2 focus-within:z-10 flex flex-col items-center justify-center">
           <Svg>
             <component ref="comp" :is="navItem.icon"></component>
           </Svg>

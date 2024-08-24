@@ -258,9 +258,9 @@ const channels = [
 </script>
 
 <template>
-  <div class="relative overflow-x-auto overflow-y-auto shadow-md mb-16">
-    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+  <div class="relative overflow-x-auto overflow-y-auto shadow-md">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-400">
+      <thead class="text-xs uppercase bg-gray-700 text-gray-400">
       <tr>
         <th scope="col" class="px-6 py-3 text-center" colspan="2">
           Биржа каналов
@@ -268,9 +268,9 @@ const channels = [
       </tr>
       </thead>
       <tbody>
-      <tr :key="channel.id" v-for="channel in channels" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <tr :key="channel.id" v-for="channel in channels" class="border-b bg-gray-800 border-gray-700">
         <th scope="row"
-            class="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white">
+            class="flex items-center px-6 py-4 whitespace-nowrap text-white">
           <img class="w-10 h-10 rounded-full" :src="channel.img" alt="Jese image">
           <div class="ps-3">
             <div class="text-base font-semibold">{{ channel.name }}</div>
@@ -279,7 +279,7 @@ const channels = [
         </th>
         <td class="px-6 py-4">
           <!-- Modal toggle -->
-          <button type="button" class="text-[10px] px-2 py-0 hover:text-white border border-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-center me-2 mb-2 dark:border-green-500 dark:text-green-500 dark:hover:text-white dark:hover:bg-green-600 dark:focus:ring-green-800">Посмотреть</button>
+          <button type="button" data-toggle="modal" data-target="#editUserModal" class="text-[10px] px-2 py-0 hover:text-white border focus:ring-4 focus:outline-none font-medium rounded-lg text-center me-2 mb-2 border-green-500 text-green-500 hover:bg-green-600 focus:ring-green-800">Посмотреть</button>
 <!--          <a href="#" type="button" data-modal-target="editUserModal" data-modal-show="editUserModal"
              class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Посмотреть</a>-->
         </td>

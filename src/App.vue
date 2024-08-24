@@ -7,6 +7,7 @@ import { provide, ref } from 'vue'
 
 const tg = window.Telegram.WebApp;
 tg.expand()
+tg.ready()
 
 const showDrawer = ref(false)
 const openDrawer = () => {

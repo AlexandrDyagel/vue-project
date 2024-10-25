@@ -31,7 +31,7 @@ provide('drawerActions', { openDrawer, closeDrawer })
   </main>
 
   <nav>
-    <BottomMenu />
+<!--    <BottomMenu />-->
   </nav>
 
 </template>

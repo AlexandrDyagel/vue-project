@@ -254,7 +254,13 @@ const channels = [
     img: 'https://flowbite.com/docs/images/people/profile-picture-2.jpg'
   }
 ]
+import {useWebApp} from 'vue-tg'
 
+const { initDataUnsafe, initData } = useWebApp()
+
+console.log("initData -> ", initData)
+
+console.log("initDataUnsafe ->", initDataUnsafe)
 </script>
 
 <template>

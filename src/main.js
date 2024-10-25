@@ -13,10 +13,12 @@ function cmenu() {return false;}*/
 const app = createApp(App)
 
 const routes = [
-  { path: '/', name: 'home', component: () => import('@/pages/HomeView.vue') },
-  { path: '/add', name: 'add', component: () => import('@/pages/AddChannelView.vue') },
-  { path: '/history', name: 'history', component: () => import('@/pages/HistoryView.vue') },
-  { path: '/profile', name: 'profile', component: () => import('@/pages/ProfileView.vue') },
+  { path: '/', name: 'home', component: () => import('@/pages/WhatsAppView.vue') },
+  { path: '/test', name: 'test', component: () => import('@/pages/TestView.vue') },
+  // { path: '/', name: 'home', component: () => import('@/pages/HomeView.vue') },
+  // { path: '/add', name: 'add', component: () => import('@/pages/AddChannelView.vue') },
+  // { path: '/history', name: 'history', component: () => import('@/pages/HistoryView.vue') },
+  // { path: '/profile', name: 'profile', component: () => import('@/pages/ProfileView.vue') },
 ]
 
 const router = createRouter({

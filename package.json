@@ -12,10 +12,12 @@
   },
   "dependencies": {
     "@formkit/auto-animate": "^0.8.2",
+    "@vueuse/core": "^11.0.1",
     "axios": "^1.7.2",
     "firebase-tools": "^13.15.0",
     "vue": "^3.4.29",
-    "vue-router": "^4.4.0"
+    "vue-router": "^4.4.0",
+    "vue-tg": "^0.8.0"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.8.0",

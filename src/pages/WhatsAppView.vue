@@ -2,6 +2,22 @@
 import { computed, ref } from 'vue'
 import { useWebAppHapticFeedback, useWebAppNavigation, useWebAppQrScanner, useWebAppTheme } from 'vue-tg'
 import { useRouter } from 'vue-router'
+import { jsPDF } from 'jspdf'
+
+const createPDF = () => {
+  const doc = new jsPDF();
+  const cellSize = 20; // Размер ячейки
+  const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; // Буквы для заполнения
+
+  for (let i = 0; i < letters.length; i++) {
+    const x = (i % 10) * cellSize; // Позиция по X
+    const y = Math.floor(i / 10) * cellSize; // Позиция по Y
+    doc.rect(x, y, cellSize, cellSize); // Рисуем квадрат
+    doc.text(letters[i], x + 5, y + 15); // Добавляем букву
+  }
+
+  doc.save("cells.pdf"); // Сохранение PDF
+}
 
 const router = useRouter()
 
@@ -110,13 +126,31 @@ function openWhatsappChat() {
             >
               Примеры тактильных откликов
             </button>-->
+      <div class="fixed bottom-0 mb-2 me-5">
       <button
         type="button"
-        class="fixed bottom-5 start-5 end-5 cursor-pointer  text-white bg-[#287467] font-medium rounded-lg text-sm px-5 py-2.5"
+        class="w-full bottom-5 start-5 end-5 cursor-pointer  text-white bg-[#287467] font-medium rounded-lg text-sm mb-2 px-5 py-2.5"
         @click="scanQrCode"
       >
         Сканировать QR
       </button>
+        <button
+        type="button"
+        class="w-full bottom-5 start-5 end-5 cursor-pointer  text-white bg-[#287467] font-medium rounded-lg text-sm mb-2 px-5 py-2.5"
+        @click="createPDF"
+      >
+        Создать PDF
+      </button>
+
+        <button
+          type="button"
+          class="cursor-pointer w-full text-white bg-[#287467] font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2"
+          @click="router.push('/electric')"
+        >
+          Билеты - Электробезопасность
+        </button>
+
+      </div>
     </div>
   </div>
 </template>

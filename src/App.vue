@@ -1,11 +1,13 @@
 <script setup>
 
-import BottomMenu from '@/components/BottomMenu.vue'
 import Drawer from '@/components/Drawer.vue'
 import { provide, ref } from 'vue'
+import { useWebAppViewport } from 'vue-tg'
 
+const viewport = useWebAppViewport()
+viewport.disableVerticalSwipes
 
-const tg = window.Telegram.WebApp;
+const tg = window.Telegram.WebApp
 tg.expand()
 tg.ready()
 
@@ -25,13 +27,13 @@ provide('drawerActions', { openDrawer, closeDrawer })
   <header>
 
   </header>
-    <Drawer v-if="showDrawer"/>
+  <Drawer v-if="showDrawer" />
   <main class="mb-20">
     <router-view></router-view>
   </main>
 
   <nav>
-<!--    <BottomMenu />-->
+    <!--    <BottomMenu />-->
   </nav>
 
 </template>
